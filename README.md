@@ -57,5 +57,3 @@ You can also check the logs during training and infering in  ```logs_llama/order
 }
 
 ```
-
-
