@@ -43,7 +43,7 @@ You can also check the logs during training and infering in  ```logs_llama/order
 
 
 ## Citation
-```latex
+```markdown
 @inproceedings{wang-etal-2025-continual,
     title = "Continual Gradient Low-Rank Projection Fine-Tuning for {LLM}s",
     author = "Wang, Chenxu  and
