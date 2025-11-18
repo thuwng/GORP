@@ -3,11 +3,11 @@ set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 export TRANSFORMERS_CACHE=/data/chenxu/others/.cache/huggingface
-export LC_ALL=zh_CN.UTF-8
+export LC_ALL=C.UTF-8
 port=$(shuf -i25000-30000 -n1)
-# bash scripts/order_1.sh outputs_1e-03_1e-05_8 8 "localhost:0,1,2,3,4,5,6,7" 1e-05 ".*EncDecAttention.(q|v).*" ".*SelfAttention.(q|v).*" ".*SelfAttention.(q|v).loranew_A.*" > logs/1e-03_1e-05_8_order_1.log 2>&1
+# bash scripts/order_1.sh outputs_1e-03_1e-05_8 8 "localhost:0" 1e-05 ".*EncDecAttention.(q|v).*" ".*SelfAttention.(q|v).*" ".*SelfAttention.(q|v).loranew_A.*" > logs/1e-03_1e-05_8_order_1.log 2>&1
 
-deepspeed --include $3 --master_port $port src/run_uie_lora.py \
+deepspeed --include localhost:0 --master_port $port src/run_uie_lora.py \
    --do_train \
    --do_predict \
    --predict_with_generate \
@@ -51,7 +51,7 @@ deepspeed --include $3 --master_port $port src/run_uie_lora.py \
 
 sleep 5
 
-deepspeed --include $3 --master_port $port src/run_uie_lora.py \
+deepspeed --include localhost:0 --master_port $port src/run_uie_lora.py \
    --do_train \
    --do_predict \
    --predict_with_generate \
@@ -95,7 +95,7 @@ deepspeed --include $3 --master_port $port src/run_uie_lora.py \
 
 sleep 5
 
-deepspeed --include $3 --master_port $port src/run_uie_lora.py \
+deepspeed --include localhost:0 --master_port $port src/run_uie_lora.py \
    --do_train \
    --do_predict \
    --predict_with_generate \
@@ -139,7 +139,7 @@ deepspeed --include $3 --master_port $port src/run_uie_lora.py \
 
 sleep 5
 
-deepspeed --include $3 --master_port $port src/run_uie_lora.py \
+deepspeed --include localhost:0 --master_port $port src/run_uie_lora.py \
    --do_train \
    --do_predict \
    --predict_with_generate \
