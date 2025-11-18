@@ -10,7 +10,7 @@ deepspeed --include localhost:0 --master_port $port src/run_uie_lora.py \
    --do_train \
    --do_predict \
    --predict_with_generate \
-   --model_name_or_path /initial_model/t5-large \
+   --model_name_or_path ./initial_model/t5-large \
    --data_dir CL_Benchmark \
    --task_config_dir configs/order5_configs/MultiRC \
    --instruction_file configs/instruction_config.json \
