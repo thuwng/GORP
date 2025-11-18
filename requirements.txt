@@ -8,7 +8,7 @@ nltk==3.8.1
 tensorboard==2.13.0
 tqdm==4.65.0
 rouge_score==0.1.2
-wandb==0.12.10
+//wandb==0.12.10
 sentencepiece==0.1.96
 protobuf==5.28.3
 ninja==1.11.1.2
